@@ -1,0 +1,11 @@
+.calendar{
+    min-width: 400px;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.taskArea{
+    box-sizing: border-box;
+}

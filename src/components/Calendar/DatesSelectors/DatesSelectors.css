@@ -1,0 +1,27 @@
+.wrapper-selectors{
+    max-width: 325px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+select{
+    font-size: 12px;
+    border: 1px black solid;
+    cursor: pointer;
+    height: 25px;
+}
+
+.arrows{
+    font-size: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(235, 234, 234);
+    cursor: pointer;
+    height: 25px;
+    right: 0;
+    font-weight: 900;
+}
+
+.arrows:hover{
+    border: 1px gray solid;
+}

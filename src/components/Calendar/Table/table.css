@@ -1,0 +1,64 @@
+.calendar{
+    border-right: 1px rgb(165, 165, 165) solid;
+}
+
+table{
+    margin: 5px 0 0;
+}
+
+td{
+    text-align: center;
+    border: 1px rgb(165, 165, 165) solid;
+    width: 40px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.days{
+    cursor: pointer;
+    position: relative;
+    text-align: right;
+    vertical-align: top;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.days:hover{
+    background-color: rgb(177, 250, 255);
+    color: black;
+}
+
+.withoutDays{
+    background-color: rgb(222, 222, 222);
+}
+
+.today{
+    background-color: rgb(0, 123, 255);
+    color: white;
+}
+
+.selected{
+    outline: 1.5px blue solid;
+}
+
+.shortText{
+    position: absolute;
+    width: 98%;
+    margin: 0;
+    line-height: 1em;
+    font-size: 11px;
+    text-align: center;
+    background-color: rgb(244, 244, 0);
+    bottom: 1px;
+}
+
+.date{
+    display: inline-block;
+    width: 18px;
+    border-radius: 10px;
+}
+
+.hasNotes{
+    background-color: rgb(1, 212, 142);
+}

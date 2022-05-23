@@ -1,0 +1,9 @@
+.BlockForCreateNotes{
+    display: flex;
+    width: 100%;
+}
+
+.chooseDate{
+    margin: auto;
+    font-size: 30px;
+}

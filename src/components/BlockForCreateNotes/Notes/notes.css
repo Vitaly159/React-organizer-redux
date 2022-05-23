@@ -1,0 +1,9 @@
+.notes-wrapper{
+    border-right: 1px rgba(179, 179, 179, 1) solid;
+    box-sizing: border-box;
+    width: 400px;
+    min-width: 400px;
+    max-width: 800px;
+    height: 100vh;
+    padding: 20px;
+}
