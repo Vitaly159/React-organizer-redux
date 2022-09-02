@@ -5,33 +5,35 @@ import NotesHeader from './Notes-header/NotesHeader'
 
 import './notes.css';
 
-function Notes( { notes, onAddNote, onDeleteNote, activeNote, setActiveNote, setValueTitle, setValueBody, activeCell, chosenDate, convertDate } ){
+function Notes({ onAddNote, onDeleteNote, activeNote, setActiveNote, setValueTitle, setValueBody, activeCell, 
+                 chosenDate, convertDate}) {
     
-    const [searchValue, setSearchValue] = useState('');
-    const searching = function(event){
-        setSearchValue(event.target.value);
-    }
-   
-    return (
-    <div className="notes-wrapper">
-        <NotesHeader 
-            onAddNote={onAddNote}
-            searching={searching}
-            chosenDate={chosenDate}
-        />
+  const [searchValue, setSearchValue] = useState('');
 
-        <AddNotes 
-            notes={notes}
-            searchValue={searchValue}
-            activeNote={activeNote}
-            setActiveNote={setActiveNote}
-            onDeleteNote={onDeleteNote}
-            setValueTitle={setValueTitle}
-            setValueBody={setValueBody}
-            activeCell={activeCell}
-            convertDate={convertDate}
-        /> 
+  const searching = function(event){
+    setSearchValue(event.target.value);
+  }
+   
+  return (
+    <div className="notes-wrapper">
+      <NotesHeader 
+        onAddNote={onAddNote}
+        searching={searching}
+        chosenDate={chosenDate}
+      />
+
+      <AddNotes 
+        searchValue={searchValue}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
+        onDeleteNote={onDeleteNote}
+        setValueTitle={setValueTitle}
+        setValueBody={setValueBody}
+        activeCell={activeCell}
+        convertDate={convertDate}
+      /> 
     </div>
-)}
+  )
+}
 
 export default Notes;     
