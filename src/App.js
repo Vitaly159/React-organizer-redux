@@ -27,22 +27,14 @@ function App() {
     );
   };
   
-  const [activeCell, setActiveCell] = useState("");
-  const [chosenDate, setChosenDate] = useState();
-
   return (
     <div className="App">
       <Calendar
-        activeCell={activeCell}
-        setActiveCell={setActiveCell}
-        setChosenDate={setChosenDate}
         convertDate={convertDate}
       />
 
       <BlockForCreateNotes
-        activeCell={activeCell}
         // setNotes={setNotes}
-        chosenDate={chosenDate}
         convertDate={convertDate}
       />
     </div>

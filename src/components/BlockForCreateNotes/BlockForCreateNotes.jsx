@@ -9,7 +9,6 @@ import "./BlockForCreateNotes.css";
 
 function BlockForCreateNotes({
   setNotes,
-  chosenDate,
   convertDate,
 }) {
   const notes = useSelector((state) => state.notes.notes);
@@ -66,7 +65,6 @@ function BlockForCreateNotes({
         setValueTitle={setValueTitle}
         setValueBody={setValueBody}
         activeCell={activeCell}
-        chosenDate={chosenDate}
         convertDate={convertDate}
       />
 

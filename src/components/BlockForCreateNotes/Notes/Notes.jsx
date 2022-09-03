@@ -6,7 +6,7 @@ import NotesHeader from './Notes-header/NotesHeader'
 import './notes.css';
 
 function Notes({ onAddNote, onDeleteNote, activeNote, setActiveNote, setValueTitle, setValueBody, activeCell, 
-                 chosenDate, convertDate}) {
+                 convertDate}) {
     
   const [searchValue, setSearchValue] = useState('');
 
@@ -19,7 +19,6 @@ function Notes({ onAddNote, onDeleteNote, activeNote, setActiveNote, setValueTit
       <NotesHeader 
         onAddNote={onAddNote}
         searching={searching}
-        chosenDate={chosenDate}
       />
 
       <AddNotes 
