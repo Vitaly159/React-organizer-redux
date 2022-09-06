@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getMonthDate, setCalendarDays } from "../../../slice/notesSlice";
+import { getMonthDate } from "../../../slice/notesSlice";
 
 import "./DatesSelectors.css";
 

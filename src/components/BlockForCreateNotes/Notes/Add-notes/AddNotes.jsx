@@ -1,18 +1,18 @@
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  onDeleteNote,
+  setActiveNote,
+  setValueBody,
+  setValueTitle,
+} from "../../../../slice/notesSlice";
 import "./addNotes.css";
 
-function AddNotes({
-  searchValue,
-  activeNote,
-  setActiveNote,
-  onDeleteNote,
-  setValueTitle,
-  setValueBody,
-  activeCell,
-  convertDate,
-}) {
+function AddNotes({ convertDate }) {
+  const dispatch = useDispatch();
   const notes = useSelector((state) => state.notes.notes);
+  const activeCell = useSelector((state) => state.notes.activeCell);
+  const activeNote = useSelector((state) => state.notes.activeNote);
+  const searchValue = useSelector((state) => state.notes.searchValue);
 
   const filteredNotes = notes.filter(
     (note) =>
@@ -31,19 +31,22 @@ function AddNotes({
 
   return filteredNotes.map(
     (note, index) =>
-      convertDate(new Date(activeCell)) === convertDate(new Date(note.sub)) && (
+      convertDate(new Date(activeCell)) == convertDate(new Date(note.sub)) && (
         <div
           key={index}
-          className={`added-note ${note.id === activeNote && "active"}`}
+          className={`added-note ${note.id == activeNote && "active"}`}
           onClick={() => {
-            setActiveNote(note.id);
-            setValueTitle(note.title);
-            setValueBody(note.body);
+            dispatch(setActiveNote(note.id));
+            dispatch(setValueTitle(note.title));
+            dispatch(setValueBody(note.body));
           }}
         >
           <div className="added-note-title">
             <strong>{note.title}</strong>
-            <button className="del" onClick={() => onDeleteNote(note.id)}>
+            <button
+              className="del"
+              onClick={() => dispatch(onDeleteNote(note.id))}
+            >
               Удалить
             </button>
           </div>

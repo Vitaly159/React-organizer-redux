@@ -5,6 +5,7 @@ import "./table.css";
 function Table({ calendarDays, convertDate }) {
   const dispatch = useDispatch();
   const notes = useSelector((state) => state.notes.notes);
+
   const activeCell = useSelector((state) => state.notes.activeCell);
   const daysNames = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
   const currentDay = new Date();
@@ -12,7 +13,7 @@ function Table({ calendarDays, convertDate }) {
   const getMark = (value) => {
     if (
       notes.find(
-        (note) => convertDate(new Date(note.sub)) === convertDate(value)
+        (note) => convertDate(new Date(note.sub)) == convertDate(value)
       )
     ) {
       return true;
@@ -20,6 +21,7 @@ function Table({ calendarDays, convertDate }) {
 
     return false;
   };
+  
   const getDayNamesInThead = daysNames.map((dayName) => (
     <td key={dayName}>{dayName}</td>
   ));
@@ -31,11 +33,11 @@ function Table({ calendarDays, convertDate }) {
           <td
             key={index}
             onClick={() => {
-              dispatch(setActiveCell(String(day.date)));
+              dispatch(setActiveCell((day.date)));
               dispatch(setChosenDate(convertDate(day.date)));
             }}
             className={`days 
-            ${convertDate(day.date) === convertDate(currentDay) && "today"}
+            // ${convertDate(day.date) == convertDate(currentDay) && "today"}
             ${day.date == activeCell && "selected"}`}
           >
             <span className={`date ${getMark(day.date) && "hasNotes"}`}>

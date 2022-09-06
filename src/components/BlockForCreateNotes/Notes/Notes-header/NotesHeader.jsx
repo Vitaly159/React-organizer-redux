@@ -1,14 +1,16 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { onAddNote, setSearchValue } from "../../../../slice/notesSlice";
 import "./notesHeader.css";
 
-function NotesHeader({ onAddNote, searching }) {
+function NotesHeader() {
+  const dispatch = useDispatch();
   const chosenDate = useSelector((state) => state.notes.chosenDate);
-console.log(chosenDate);
+
   return (
     <div>
       <div className="notes-header">
         <h1>Записи</h1>
-        <button className="add-note" onClick={onAddNote}>
+        <button className="add-note" onClick={() => dispatch(onAddNote())}>
           Новая запись
         </button>
       </div>
@@ -18,7 +20,7 @@ console.log(chosenDate);
       <div>
         <input
           className="searching"
-          onChange={searching}
+          onChange={(e) => dispatch(setSearchValue(e.target.value))}
           placeholder="Поиск по записям"
         />
       </div>
